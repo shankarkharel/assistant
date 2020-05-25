@@ -34,13 +34,19 @@ def takecommand():
 
 this can open youtube,google,map.
 #logic for executing task.
+
+
 if 'exit'in query.lower():
-        say('thank you!')
+       
+       say('thank you!')
 
 elif 'open youtube' in query.lower():
+    
     speak('opening youtube')
     webbrowser.open("youtube.com")
+    
 elif 'open facebook' in query.lower():
+    
     speak('facebook is opening')
     webbrowser.open("https://www.facebook.com/")
 elif 'Google' in query:
