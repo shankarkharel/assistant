@@ -12,6 +12,7 @@ def wishme():
             speak("hello there!")
 it can listen to your instructions and convert them to text and print on scrren by writting user said...
 def takecommand():
+
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("listening....")
@@ -31,7 +32,7 @@ def takecommand():
 
     return query \\query is what the user said.
 
-this can opem youtube,google,map.
+this can open youtube,google,map.
 #logic for executing task.
 if 'exit'in query.lower():
         say('thank you!')
