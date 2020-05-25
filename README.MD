@@ -50,10 +50,13 @@ elif 'open facebook' in query.lower():
     speak('facebook is opening')
     webbrowser.open("https://www.facebook.com/")
 elif 'Google' in query:
+
     speak('browsing to google.com')
     webbrowser.open("google.com")
+    
 elif 'location' in query.lower():
-    speak('opening google maps')
+   
+   speak('opening google maps')
     webbrowser.open('www.google.com/maps')
 
 
