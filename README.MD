@@ -49,6 +49,7 @@ elif 'open facebook' in query.lower():
     
     speak('facebook is opening')
     webbrowser.open("https://www.facebook.com/")
+    
 elif 'Google' in query:
 
     speak('browsing to google.com')
@@ -56,7 +57,7 @@ elif 'Google' in query:
     
 elif 'location' in query.lower():
    
-   speak('opening google maps')
+    speak('opening google maps')
     webbrowser.open('www.google.com/maps')
 
 
@@ -64,16 +65,16 @@ This is also able to search any thing on wikipedia and read out 3 sentences.
 
 elif 'Wikipedia' in query:
    
-   speak("searching wikipedia....")
+    speak("searching wikipedia....")
     query = query.replace("wikipedia","")
     results = wikipedia.summary(query,sentences=3)
     speak(results)
     
 insall and import the following modules as shown for running this in your python environment.
 
-import pyttsx3
-
-import datetime
+ import pyttsx3
+ 
+ import datetime
 
 import speech_recognition as sr
 
