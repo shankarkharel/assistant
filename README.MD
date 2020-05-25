@@ -70,7 +70,7 @@ elif 'Wikipedia' in query:
     results = wikipedia.summary(query,sentences=3)
     speak(results)
     
-insall and import the following modules as shown for running this in your python environment.
+install and import the following modules  for running this in your python environment.
 
  import pyttsx3
  
