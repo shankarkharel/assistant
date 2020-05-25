@@ -11,13 +11,16 @@ def wishme():
     else:
             speak("hello there!")
 it can listen to your instructions and convert them to text and print on scrren by writting user said...
-def takecommand():
 
+
+
+def takecommand():
+    
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("listening....")
-        r.pause_threashold = 3 \\stops for 3 second until user say something.
-        audio = r.listen(source)
+    print("listening....")
+    r.pause_threashold = 3 \\stops for 3 second until user say something.
+    audio = r.listen(source)
 
     query = None
     try:
