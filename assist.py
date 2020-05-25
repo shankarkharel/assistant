@@ -23,50 +23,63 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 def wishme():
-        hour = int(datetime.datetime.now().hour)
-        if hour>=0 and hour<12:
+    hrs = int(datetime.datetime.now().hour)
+
+    if hrs>=12 and hrs<0:
             speak("good morning!")
-        elif hour>12 and hour<18:
+    elif hrs>=0 and hrs<5:
          speak("good afternoon!")
-        else:
-            speak("good evening")
+    elif hrs>5 and time<8:
+        speak('good evening!')
+    else:
+            speak("hello there!")
 def takecommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("listening....")
-        r.pause_threashold = 2
+        r.pause_threashold = 3
         audio = r.listen(source)
 
     query = None
     try:
         print("recogniting...")
-        query = r.recognize_google(audio,language='en-in')
+        query = r.recognize_google(audio,language='en-uk')
 
         print(f"user said : {query}\n")
     except Exception as e:
-        print("please say that again..")
+        speak("please say that again..")
         query = None
+
     return query
-
-
-
-if __name__ == '__main__':
-    speak("i am assistant to this device coded by shankar.")
+#program starts.
+speak("i am assistant to this device.")
+speak('how can i help you?')
 wishme()
-query = takecommand()
 
-if 'wikipedia' in query.lower():
+query=takecommand()
+
+
+
+#logic for executing task.
+if 'exit'in query.lower():
+        say('thank you!')
+
+elif 'Wikipedia' in query:
     speak("searching wikipedia....")
     query = query.replace("wikipedia","")
     results = wikipedia.summary(query,sentences=3)
     speak(results)
 
 elif 'open youtube' in query.lower():
+    speak('opening youtube')
     webbrowser.open("youtube.com")
 elif 'open facebook' in query.lower():
-    webbrowser.open("www.facebook.com")
-elif 'open google' in query.lower():
-    webbrowser.open("www.google.com")
-elif 'my location' in query.lower():
+    speak('facebook is opening')
+    webbrowser.open("https://www.facebook.com/")
+elif 'Google' in query:
+    speak('browsing to google.com')
+    webbrowser.open("google.com")
+elif 'location' in query.lower():
+    speak('opening google maps')
     webbrowser.open('www.google.com/maps')
 
