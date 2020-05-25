@@ -58,17 +58,28 @@ elif 'location' in query.lower():
 
 
 This is also able to search any thing on wikipedia and read out 3 sentences.
+
 elif 'Wikipedia' in query:
-    speak("searching wikipedia....")
+   
+   speak("searching wikipedia....")
     query = query.replace("wikipedia","")
     results = wikipedia.summary(query,sentences=3)
     speak(results)
+    
 insall and import the following modules as shown for running this in your python environment.
-import pyttsx3 
+
+import pyttsx3
+
 import datetime
+
 import speech_recognition as sr
+
 import wikipedia
+
 import webbrowser
+
 import os
+
 import smtplib
+
 import pythoncom.
